@@ -5,9 +5,9 @@ import pandas as pd
 
 import matplotlib.pyplot as plt
 from bokeh.plotting import figure, show
-from bokeh.models import HoverTool
+from bokeh.models import HoverTool, Span, Label, LegendItem
 
-from sklearn.preprocessing import MinMaxScaler, StandardScaler
+from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 
 from keras.models import Sequential
@@ -19,7 +19,7 @@ from statsmodels.tools.sm_exceptions import ConvergenceWarning
 
 # 1. Sequential model
 # Import data and perform data cleaning
-data = pd.read_csv('Bitcoin Historical Data.csv')
+data = pd.read_csv('Bitcoin Historical Data (2).csv')
 #print(data)
 
 
@@ -142,7 +142,8 @@ data_scaled = scaler.fit_transform(data.drop('Price', axis=1))
 print("Data:", data_scaled.shape)
 
 # Creating a VARMAX model and predicting future values for each feature
-future_steps = 365
+future_steps = 100 # can be replaced by any other period, but the model will always predict the terminating form of the exchange rate
+                   # In the chart there is a line that separates the predicted terminal form of the exchange rate from the values that can be interpreted
 
 varmax_predictions = []
 
@@ -190,6 +191,17 @@ p = figure(title='Bitcoin Price Prediction', x_axis_label='Date', y_axis_label='
 p.line(dates, target_unscaled[:max_length].flatten(), legend_label='Actual Price', line_color='blue')
 p.line(dates, future_prices[:max_length].flatten(), legend_label='Predicted Price', line_color='red', line_dash='dashed')
 #p.line(dates[rolling_window_size-1:], rolling_mean_predicted_prices, legend_label='Smoothed Predicted Price', line_color='black')
+
+# Separates the predicted terminal form of the exchange rate from the values that can be interpreted
+two_thirds_index = int(len(varmax_predictions_reshaped) * 2 / 3)
+two_thirds_future_date = dates[-two_thirds_index]
+
+tboundary = Span(location=two_thirds_future_date, dimension='height', line_color='black', line_width=1)
+p.add_layout(tboundary)
+
+label = Label(x=two_thirds_future_date, y=1, text='Terminal Prediction Boundary', text_font_size='10pt', text_color='black')
+legend_item = LegendItem(label='Terminal Prediction Boundary')
+p.legend.items.append(legend_item)
 
 hover = HoverTool()
 hover.tooltips = [('Date', '@x{%F}'), ('Price', '@y')]
