@@ -1,0 +1,6 @@
+pandas~=2.2.2
+matplotlib~=3.8.4
+sklearn~=1.4.2
+bokeh~=3.4.1
+keras~=3.3.3
+statsmodels~=0.14.2
