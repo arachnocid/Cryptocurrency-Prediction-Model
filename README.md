@@ -16,8 +16,6 @@ Two main modeling approaches are utilized - a **_Sequential_** neural network mo
 
 An interactive chart is implemented to display both the observed and forecasted cryptocurrency prices, allowing users to access date and price by moving a cursor.
 
-[Observe the chart](https://arachnocid.github.io/Cryptocurrency-Prediction-Model/CryptocurrencyPredictModel.html)
-
 # **Prerequisites**
 
 ### Libraries
