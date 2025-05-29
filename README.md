@@ -1,5 +1,5 @@
 # **Cryptocurrency Prediction Model**
-This repository presents a data science project focused on forecasting future changes in cryptocurrency prices, leveraging machine learning techniques and time series analysis. The project aims to equip investors, traders, and financial institutions with predictive insights to facilitate informed decision-making in the volatile cryptocurrency market.
+This repository is my data science project focused on forecasting future changes in cryptocurrency prices, leveraging machine learning techniques and time series analysis. The project aims to equip investors, traders, and financial institutions with predictive insights to facilitate informed decision-making in the volatile cryptocurrency market.
 
 ### Google Colab Notebook
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Uwk2WeW7bd0F0wqPSwxGyl_U5KqKPm7P?usp=sharing)
