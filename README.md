@@ -1,5 +1,5 @@
 # **Cryptocurrency Prediction Model**
-This repository is my data science project focused on forecasting **possible** future changes in cryptocurrency prices.
+This repository is my data science project focused on forecasting **POSSIBLE** future changes in cryptocurrency prices.
 
 ### Google Colab Notebook
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Uwk2WeW7bd0F0wqPSwxGyl_U5KqKPm7P?usp=sharing)
@@ -32,10 +32,6 @@ An interactive chart is implemented to display both the observed and forecasted 
 - Cryptocurrency historical data was collected from **_investing.com_** to gather a comprehensive dataset of Bitcoin exchange rates over time.
 - The file includes various features such as open, high, low, close prices, trading volume, and percentage changes.
 - Any historical cryptocurrency data from this site can be used in the model.
-
-# **Outcome**
--	The neural network and time series forecasting models successfully predicted future Bitcoin prices trends until today with reasonable accuracy.
--	With the model being relatively raw with no external parameters, relying solely on cryptocurrency source data, this level of accuracy is significant.
 
 # **Getting Started**
 ### Obtaining the data:
